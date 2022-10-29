@@ -1,0 +1,24 @@
+resource="org/housemart/dao/entities/houseAuditHistoryEntity.xml" />
+<sqlMap resource="org/housemart/dao/entities/residenceAuditHistoryEntity.xml" />
+<sqlMap resource="org/housemart/dao/entities/houseFavoriteEntity.xml" />
+<sqlMap resource="org/housemart/dao/entities/housePicEntity.xml" />
+<sqlMap resource="org/housemart/dao/entities/housePicSortEntity.xml" />
+<sqlMap resource="org/housemart/dao/entities/houseTagEntity.xml" />
+<sqlMap resource="org/housemart/dao/entities/houseInteractionEntity.xml" />
+<sqlMap resource="org/housemart/dao/entities/houseInteractionTransferEntity.xml" />
+<sqlMap resource="org/housemart/dao/entities/houseInteractionNoticeEntity.xml" />
+<sqlMap resource="org/housemart/dao/entities/google-place.xml" />
+<sqlMap resource="org/housemart/dao/entities/areaPositionEntity.xml" />
+<sqlMap resource="org/housemart/dao/entities/MaxinRawEntity.xml" />
+<sqlMap resource="org/housemart/dao/entities/HouseLeadsEntity.xml" />
+<sqlMap resource="org/housemart/dao/entities/keyValueEntity.xml" />
+<sqlMap resource="org/housemart/dao/entities/appClientFileEntity.xml" />
+<sqlMap resource="org/housemart/dao/entities/residenceNameHistoryEntity.xml" />
+<!-- repository -->
+<sqlMap resource="org/housemart/dao/entities/repositoryHousePic.xml" />
+<!-- house contact view -->
+<sqlMap resource="org/housemart/dao/entities/houseContactView.xml" />
+
+<sqlMap resource="org/housemart/crawl/ziprealty/model/zrHouse.xml" />
+<sqlMap resource="org/housemart/crawl/ziprealty/model/zrHouseHmHouse.xml" />
+</sqlMapConfig>
