@@ -1,0 +1,40 @@
+#
+# http://www.dest-unreach.org/socat/
+brew install socat
+
+# sqlmap
+#
+# Automatic SQL injection and database takeover tool
+#
+# http://sqlmap.org
+brew install sqlmap
+
+# tcpflow
+#
+# TCP/IP packet demultiplexer
+#
+# https://github.com/simsong/tcpflow
+brew install tcpflow
+
+# Tcpreplay - Pcap editing and replaying utilities
+#
+# Tcpreplay is a suite of free Open Source utilities for editing and replaying
+# previously captured network traffic.
+#
+# http://tcpreplay.appneta.com
+brew install tcpreplay
+
+# tcptrace
+#
+# tcptrace is a tool for analysis of TCP dump files.
+#
+# http://www.tcptrace.org/
+brew install tcptrace
+
+# ucspi-tcp
+#
+# tcpserver and tcpclient are easy-to-use command-line tools for building TCP
+# client-server applications.
+#
+# http://cr.yp.to/ucspi-tcp.html
+brew install ucspi-tcp
