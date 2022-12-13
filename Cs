@@ -1,0 +1,61 @@
+            }
+            else if (userInput.Contains("-"))
+            {
+                try
+                {
+                    int lowIndex = Convert.ToInt32(userInput.Substring(0, userInput.IndexOf('-')));
+                    int highIndex = Convert.ToInt32(userInput.Substring(userInput.IndexOf('-') + 1, userInput.Length - userInput.IndexOf('-') - 1));
+
+                    if (highIndex > _gitLinks.Count || lowIndex <= 0)
+                    {
+                        Console.WriteLine("Incorrect Bounds");
+                        return;
+                    }
+
+                    for (int i = lowIndex; i <= highIndex; i++)
+                    {
+                        Clone(_gitLinks.ElementAt(i - 1).Value);
+                    }
+                }
+                catch(Exception e)
+                {
+                    Console.WriteLine("Incorrect input");
+                }
+            }
+            else
+            {
+                if(userInput.ToUpper() == "X")
+                {
+                    Console.Clear();
+                    return;
+                }
+
+                try
+                {
+                    Clone(_gitLinks.ElementAt(Convert.ToInt32(userInput)).Value);
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Incorrect input");
+                }
+            }
+        }
+
+        private static void Clone(string cloneLink)
+        {
+            Console.WriteLine($"\n{cloneLink}");
+            Process process = Process.Start("CMD.EXE", $@"/C {_userSettings["defaultDirectory"].Substring(0, 1)}:&&cd {_userSettings["defaultDirectory"]}&&git clone {cloneLink}&&echo Repo Cloned to {_userSettings["defaultDirectory"]}");
+            process.WaitForExit();
+        }
+
+        private static bool CheckForNullRepos()
+        {
+            if (_gitLinks == null || _gitLinks.Count == 0)
+            {
+                Console.WriteLine("No Repos Available");
+                return true;
+            }
+            return false;
+        }
+    }
+}
