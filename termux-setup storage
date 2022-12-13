@@ -1,0 +1,29 @@
+Problem description
+My Android is running on CUSTOM ROM RR Nougat 7.1.2. I have allowed storage permission to termux but when I try to execute the command termux-setup-storage, I get this -> CANNOT LINK EXECUTABLE "/system/bin/app_process": cannot locate symbol "__xlog_buf_printf" referenced by "/system/lib/libdpframework.so"...
+
+Steps to reproduce
+$termux-setup storage
+Expected behavior
+I wanted it to allow me to access my internal and external storage from termux but I couldn't
+
+Additional information
+$ termux-info
+Packages CPU architecture:
+arm
+Subscribed repositories:
+# sources.list
+deb https://termux.org/packages/ stable main
+# game-repo (sources.list.d/game.list)
+deb https://dl.bintray.com/grimler/game-packages-24 games stable
+# science-repo (sources.list.d/science.list)
+deb https://dl.bintray.com/grimler/science-packages-24 science stable
+Updatable packages:
+All packages up to date
+Android version:
+7.1.2
+Kernel build information:
+Linux localhost 3.4.67 #1 SMP PREEMPT Thu Mar 26 14:02:46 CST 2015 armv7l Android
+Device manufacturer:
+Huawei
+Device model:
+Pixel XL
