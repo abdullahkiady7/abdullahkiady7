@@ -1,0 +1,94 @@
+
+GitCredentialManager
+/
+git-credential-manager
+Public
+Secure, cross-platform Git credential storage with authentication to GitHub, Azure Repos, and other popular Git hosting services.
+
+License
+ View license
+ 3.6k stars  1k forks
+Code
+Issues
+37
+Pull requests
+8
+Discussions
+Actions
+Security
+1
+Insights
+GitCredentialManager/git-credential-manager
+Latest commit
+@ldennington
+ldennington
+…
+last week
+Git stats
+Files
+README.md
+Git Credential Manager
+Build Status
+
+Git Credential Manager (GCM) is a secure Git credential helper built on .NET that runs on Windows, macOS, and Linux. It aims to provide a consistent and secure authentication experience, including multi-factor auth, to every major source control hosting service and platform.
+
+GCM supports (in alphabetical order) Azure DevOps, Azure DevOps Server (formerly Team Foundation Server), Bitbucket, GitHub, and GitLab. Compare to Git's built-in credential helpers (Windows: wincred, macOS: osxkeychain, Linux: gnome-keyring/libsecret), which provide single-factor authentication support for username/password only.
+
+GCM replaces both the .NET Framework-based Git Credential Manager for Windows and the Java-based Git Credential Manager for Mac and Linux.
+
+Install
+See the installation instructions for the current version of GCM for install options for your operating system.
+
+Current status
+Git Credential Manager is currently available for Windows, macOS, and Linux*. GCM only works with HTTP(S) remotes; you can still use Git with SSH:
+
+Azure DevOps SSH
+GitHub SSH
+Bitbucket SSH
+Feature	Windows	macOS	Linux*
+Installer/uninstaller	✓	✓	✓
+Secure platform credential storage (see more)	✓	✓	✓
+Multi-factor authentication support for Azure DevOps	✓	✓	✓
+Two-factor authentication support for GitHub	✓	✓	✓
+Two-factor authentication support for Bitbucket	✓	✓	✓
+Two-factor authentication support for GitLab	✓	✓	✓
+Windows Integrated Authentication (NTLM/Kerberos) support	✓	N/A	N/A
+Basic HTTP authentication support	✓	✓	✓
+Proxy support	✓	✓	✓
+amd64 support	✓	✓	✓
+x86 support	✓	N/A	✗
+arm64 support	best effort	✓	best effort, no packages
+armhf support	N/A	N/A	best effort, no packages
+(*) GCM guarantees support only for the Linux distributions that are officially supported by dotnet.
+
+Supported Git versions
+Git Credential Manager tries to be compatible with the broadest set of Git versions (within reason). However there are some know problematic releases of Git that are not compatible.
+
+Git 1.x
+
+The initial major version of Git is not supported or tested with GCM.
+
+Git 2.26.2
+
+This version of Git introduced a breaking change with parsing credential configuration that GCM relies on. This issue was fixed in commit 12294990 of the Git project, and released in Git 2.27.0.
+
+How to use
+Once it's installed and configured, Git Credential Manager is called implicitly by Git. You don't have to do anything special, and GCM isn't intended to be called directly by the user. For example, when pushing (git push) to Azure DevOps, Bitbucket, or GitHub, a window will automatically open and walk you through the sign-in process. (This process will look slightly different for each Git host, and even in some cases, whether you've connected to an on-premises or cloud-hosted Git host.) Later Git commands in the same repository will re-use existing credentials or tokens that GCM has stored for as long as they're valid.
+
+Read full command line usage here.
+
+Configuring a proxy
+See detailed information here.
+
+Additional Resources
+See the documentation index for links to additional resources.
+
+Experimental Features
+Windows broker (experimental)
+Contributing
+This project welcomes contributions and suggestions. See the contributing guide to get started.
+
+This project follows GitHub's Open Source Code of Conduct.
+
+License
+We're MIT licensed. When using GitHub logos, please be sure to follow the GitHub logo guidelines.
