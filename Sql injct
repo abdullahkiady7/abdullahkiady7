@@ -1,0 +1,138 @@
+Sqmlap is a tool that comes with Kali Linux that automates the detection and exploitation of SQL injection security holes. This documentation will describe the process of attacking a number of websites. 
+The command sqlmap -u URL was used to test web pages for vulnerabilities. For example:
+sqlmap -u http://www.biohack.inn650/?page_id=31
+
+Web pages were also tested manually by using a single ‘ after the web address. For example:
+http://www.biohack.inn650/?page_id=31’
+
+Fields in web forms were tested manually. SQL statements were entered into web forms in the hope that output indicating a vulnerability would be returned. Statements used to test for vulnerabilities are presented below:
+
+' OR 1=1
+
+‘OR WHERE pwd LIKE ‘
+
+### Alphatech website
+
+The Alphatech web site consists of the following web pages:
+
+www.alphatech.inn650
+
+www.alphatech.inn650/contact.html
+
+www.alphatech.inn650/mediawiki/index.php/Main_Page
+
+mail.alphatech.inn650/squirrelmail/src/login.php 
+
+None of the above addresses have parameters that are exploitable by SQL injection attack. This was confirmed using sqlmap. Manual sql attack reported on the login page login fields reported unknown user or password, indicating these fields were not susceptible to attack.
+
+
+### Biohack website
+
+http://www.biohack.inn650
+This is the homepage for Biohack. This URL has no parameters that are exploitable by SQL injection attack. 
+
+http://www.biohack.inn650/?page_id=31
+This is the "my account" page for Biohack. It was found to be not susceptible to SQL injection both by manual testing and by sqlmap as of Monday 26th May. 
+
+http://www.biohack.inn650/?post_type=product
+This is the product page for Biohack. It was found not to have any parameters that could be vulnerable to an SQL injection attack as tested manually and by sqlmap on Monday 26th May.
+
+http://www.biohack.inn650/?page_id=7
+This is the "about us" page for Biohack. It was found to be not susceptible to SQL injection both by manual testing and by sqlmap as of Monday 26th May. 
+
+http://www.biohack.inn650/?page_id=29
+This is the “cart” page for Biohack. It was found to be not susceptible to SQL injection both by manual testing and by sqlmap as of Monday 26th May. 
+
+http://www.biohack.inn650/?page_id=30
+This is the “checkout” page for Biohack. It was found to be not susceptible to SQL injection both by manual testing and by sqlmap as of Monday 26th May. 
+
+sqlmap -u http://www.biohack.inn650/?page_id=89
+This is the “contact us” page for Biohack. It was found to be not susceptible to SQL injection both by manual testing and by sqlmap as of Monday 26th May.
+
+### Cupcake website
+The Cupcake web site consists of the following web pages:
+
+www.cupcakes.inn650/Cupcakes.php 
+
+www.cupcake.inn650/Team.php
+
+www.cupcake.inn650/wiki/dokuwiki/doku.php
+
+None of the above addresses have parameters that are exploitable by SQL injection attack. This was confirmed using sqlmap.
+
+### Phoenix website
+The Phoenix Web site contains the following web pages:
+
+www.phoenix.inn650/Browser/Navigation.php?Home
+
+www.phoenix.inn650/Browser/Navigation.php?About
+
+www.phoenix.inn650/Browser/Navigation.php?Products
+
+www.phoenix.inn650/Browser/Navigation.php?Shop
+
+www.phoenix.inn650/Browser/Navigation.php?Events
+
+www.phoenix.inn650/Browser/Navigation.php?Contact
+
+None of the above addresses have parameters that are exploitable by SQL injection attack. This was confirmed using sqlmap on 26th May.
+The contact page has fields for subject, detail, name and email. Manual SQL attacks revealed no vulnerabilities.
+
+
+
+### Pchifi website
+http://10.2.2.8/wordpress has no parameters that are exploitable by SQL injection attack. 
+
+http://10.2.2.8/wordpress/?page_id=7 is the catalogue page. It was found to be not susceptible to SQL injection both by manual testing and by sqlmap as at 31st May.
+
+http://10.2.2.8/wordpress/?page_id=57 is the CEO Corner page. It was found to be not susceptible to SQL injection both by manual testing and by sqlmap as at 31st May. This webpage has fields for name, email,
+website and comment. Manual SQL injection attacks of these fields returned no unusual output.
+
+mail.pchifi.inn650/src/login.php is the employee mail page. It was found by sqlmap to have no injectable parameters as at 31st May. This web page has fields for name and password. Manual SQL injection attacks returned unknown user or password message. It was therefore surmised these fields were not vulnerable to SQL injection attack.
+
+http://10.2.2.8/wordpress/?page_id=5 is the shopping cart page. It was found to be not susceptible to SQL injection both by manual testing and by sqlmap as at 31st May.
+
+http://10.2.2.8/wordpress/?page_id=6 is the checkout page. It was found to be not susceptible to SQL injection both by manual testing and by sqlmap as at 31st May.
+
+http://10.2.2.8/wordpress/?page_id=70 is the “my account” page. It was found to be not susceptible to SQL injection both by manual testing and by sqlmap as at 31st May. This page has fields for username and password. Manual SQL attack returned invalid user name message.
+
+http://10.2.2.8/wordpress/?page_id=72 is the contact us page. 
+was found not to be injectable as at 31st May.
+this page has the following fields:
+Name
+Email
+Website
+Comment
+manual SQL injection attack returned "please enter valid email address"
+
+
+
+
+### Mantra website
+The Mantra website consists of the following web pages:
+
+homepage - www.mantra.inn650/index.php
+blog - blog.mantra.inn650/login.php
+
+forum - forum.mantra.inn650
+
+contact page - www.mantra.inn650/contact.php
+
+None of the above addresses have parameters that are exploitable by SQL injection attack. This was confirmed using sqlmap as at 28th May.
+On 28th May manual SQL injection attacks were attempted against the employee login web form at blog.mantra.inn650/login.php but no vulnerabilities were found.
+There is a vulnerability on www.mantra.inn650 in the field where email is entered to join the mailing list. Manual SQL injection attacks entered here are processed by the server and the web page returns debugging information as seen in the screenshot below:
+
+![SQL debugging information](http://connetwork.com.au/inn650/sqlmap/mantrasyntax.png)
+
+### Omega website
+The Omega web site consists of the following web pages:
+
+home page - www.omega.inn650/index.php
+
+public forum - 10.8.1.4/wordpress/?p=16
+
+private forum - 10.8.1.4/wordpress/wp-login.php
+
+about us - www.omega.inn650/aboutus.php
+
+At as 28th May, none of the above addresses have parameters that are exploitable by SQL injection attack. This was confirmed using sqlmap. Manual injection attacks returned invalid username error on the private forum login fields.
