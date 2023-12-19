@@ -1,0 +1,8 @@
+[20]
+GitHub pull request for the reference implementation (https://github.com/python/cpython/pull/659)
+[21]
+GNU readline misbehaviour on Mac OS X with LANG=C (https://mail.python.org/pipermail/python-dev/2017-May/147897.html)
+[22]
+Potential problems when setting LANG in addition to setting LC_CTYPE (https://mail.python.org/pipermail/python-dev/2017-May/147968.html)
+Copyright
+This document has been placed in the public domain under the terms of the CC0 1.0 license: https://creativecommons.org/publicdomain/zero/1.0/
