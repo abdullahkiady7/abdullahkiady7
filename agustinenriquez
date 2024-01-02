@@ -1,0 +1,22 @@
+python 2.7.
+Version: 1.38.1
+Commit: b37e54c98e1a74ba89e03073e5a3761284e3ffb0
+Date: 2019-09-11T13:30:08.229Z
+Electron: 4.2.10
+Chrome: 69.0.3497.128
+Node.js: 10.11.0
+V8: 6.9.427.31-electron.0
+OS: Linux x64 5.0.0-29-generic
+
+Traceback (most recent call last):
+  File "/home/user/.vscode/extensions/ms-python.python-2019.9.34911/pythonFiles/ptvsd_launcher.py", line 43, in <module>
+    main(ptvsdArgs)
+  File "/home/user/.vscode/extensions/ms-python.python-2019.9.34911/pythonFiles/lib/python/ptvsd/__main__.py", line 432, in main
+    run()
+  File "/home/user/.vscode/extensions/ms-python.python-2019.9.34911/pythonFiles/lib/python/ptvsd/__main__.py", line 316, in run_file
+    runpy.run_path(target, run_name='__main__')
+  File "/usr/lib/python2.7/runpy.py", line 268, in run_path
+    mod_name, loader, code, fname = _get_main_module_details()
+  File "/usr/lib/python2.7/runpy.py", line 137, in _get_main_module_details
+    (main_name, sys.path[0]))
+ImportError: can't find '__main__' module in '/home/user/myproject/'
