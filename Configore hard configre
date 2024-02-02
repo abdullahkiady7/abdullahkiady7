@@ -1,0 +1,15 @@
+require("@nomicfoundation/hardhat-toolbox");
+
+module.exports = {
+  defaultNetwork: "hardhat",
+  networks: {
+    hardhat: {},
+    myQuickNode: {
+      url: "https://yolo-radial-uranium.bsc-testnet.quiknode.pro/03793b857dfdbc55c53c9d4c620519e31c135f64/",
+      accounts: [
+        "YOUR_PRIVATE_KEY",
+      ],
+    },
+  },
+  solidity: "0.8.19",
+};
