@@ -1,0 +1,10 @@
+const QuickNode = require('@quicknode/sdk');
+// if you are using ESM style imports, use this line instead:
+// import QuickNode from '@quicknode/sdk';
+
+const core = new Core({
+  endpointUrl: 'https://yolo-radial-uranium.bsc-testnet.quiknode.pro/03793b857dfdbc55c53c9d4c620519e31c135f64/',
+})
+
+const currentBlockNumber = await core.client.getBlockNumber();
+console.log(currentBlockNumber)
