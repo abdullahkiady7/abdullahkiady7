@@ -1,0 +1,43 @@
+/home1/eocambo/lhexpress.eocambo.com/storage/framework/views/df4cc031aece44eea930e254af285b35acf5678b.php
+<?php
+    $user_type = Auth::user()->user_type;
+?>
+<!--begin::Aside-->
+<div class="aside aside-left aside-fixed d-flex flex-column flex-row-auto" id="kt_aside">
+ 
+    <!--begin::Brand-->
+    <div class="brand flex-column-auto justify-content-center" id="kt_brand">
+ 
+        <!--begin::Logo-->
+        <a href="<?php echo e(route('admin.dashboard')); ?>" class="brand-logo justify-content-center">
+            <img
+                src="<?php echo e(get_setting('system_logo_white') != null ? uploaded_asset(get_setting('system_logo_white')) : static_asset('assets/img/logo.png')); ?>"
+                class="img-fluid"
+                style="max-height: 40px;"
+                alt="<?php echo e(get_setting('site_name') ?? translate('eOcambo Technology')); ?>">
+        </a>
+ 
+        <!--end::Logo-->
+    </div>
+ 
+    <!--end::Brand-->
+ 
+    <!--begin::Aside Menu-->
+    <div class="aside-menu-wrapper flex-column-fluid" id="kt_aside_menu_wrapper">
+ 
+        <!--begin::Menu Container-->
+        <div id="kt_aside_menu" class="py-3 aside-menu" data-menu-vertical="1" data-menu-scroll="1"
+             data-menu-dropdown-timeout="500">
+ 
+            <!--begin::Menu Nav-->
+            <ul class="menu-nav">
+                <li class="menu-item <?php echo e(areActiveRoutes(['admin.dashboard'])); ?>" aria-haspopup="true">
+                    <a href="<?php echo e(route('admin.dashboard')); ?>" class="menu-link">
+                        <i class="menu-icon flaticon-home"></i>
+                        <span class="menu-text"><?php echo e(translate('Dashboard')); ?></span>
+                    </a>
+                </li>
+ 
+                <?php if(count(\File::files(base_path('resources/views/backend/inc/addons/'))) > 0): ?>
+Arguments
+"Trying to get property 'user_type' of non-object (View: /home1/eocambo/lhexpress.eocambo.com/resources/views/backend/inc/admin_sidenav.blade.php) (View: /home1/ ▶"
