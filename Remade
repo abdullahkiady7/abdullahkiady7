@@ -1,0 +1,98 @@
+
+
+Code
+Issues
+14
+This repository has been archived by the owner on Apr 17, 2021. It is now read-only.
+An automatic SQL Injection tool which takes advantage of ~DorkNet~ Googler, Ddgr, WhatWaf and sqlmap.
+
+ 263 stars
+ 66 forks
+ 16 watching
+ 1 Branch
+ 0 Tags
+ Activity
+Public archive repository
+clouedoc/AutoSQLi
+Folders and files
+Name	
+Latest commit
+clouedoc
+clouedoc
+3 years ago
+History
+.github/ISSUE_TEMPLATE
+6 years ago
+WhatWaf @ 73bdbe9
+6 years ago
+autosqli
+6 years ago
+ddgr @ b18c6fc
+6 years ago
+googler @ 7691f30
+6 years ago
+sqlmap @ 331ccc5
+6 years ago
+tampers
+6 years ago
+.DS_Store
+6 years ago
+.gitignore
+6 years ago
+.gitmodules
+6 years ago
+Repository files navigation
+README
+AutoSQLi, the new way script-kiddies hack websites
+Features
+Save System - there is a complete save system, which can resume even when your pc crashed. - technology is cool
+Dorking - from the command line ( one dork ): YES - from a file: NO - from an interactive wizard: YES
+Waffing - Thanks to Ekultek, WhatWaf now has a JSON output function. - So it's mostly finished :) - UPDATE: WhatWaf is completly working with AutoSQLi. Sqlmap is the next big step
+Sqlmapping - I'll look if there is some sort of sqlmap API, because I don't wanna use execute this time (: - Sqlmap is cool
+REPORTING: YES
+Rest API: NOPE
+TODO:
+ Log handling (logging with different levels, cleanly)
+ Translate output (option to translate the save, which is in pickle format, to a json/csv save)
+ Spellcheck (correct wrongly spelled words and conjugational errors. I'm on Neovim right now and there is no auto-spelling check)
+The Plan
+This plan is a bit outdated, but it will follow this idea
+
+AutoSQLi will be a python application which will, automatically, using a dork provided by the user, return a list of websites vulnerable to a SQL injection.
+To find vulnerable websites, the users firstly provide a dork DOrking, which is passed to findDorks.py, which returns a list of URLs corresponding to it.
+Then, AutoSQLi will do some very basic checks ( TODO: MAYBE USING SQLMAP AND IT's --smart and --batch function ) to verify if the application is protected by a Waf, or if one of it's parameters is vulnerable.
+Sometimes, websites are protected by a Web Application Firewall, or in short, a WAF. To identify and get around of these WAFs, AutoSQLi will use WhatWaf.
+Finally, AutoSQLi will exploit the website using sqlmap, and give the choice to do whatever he wants !
+Tor
+Also, AutoSQLi should work using Tor by default. So it should check for tor availiability on startup.
+
+FAQ
+Cool :)
+Thanks
+
+It looks like SQLiDumper, no ?
+Yeah, I know.
+
+Don't mess up
+This project is for demonstration purposes. Nobody should ever run AutoSQLi. Really. Hacking into DB's is fun, but you know, there are guys just like you and me who don't want to get their entire work messed up. You don't to make them pull out their hairs, ya?
+
+Releases
+No releases published
+Packages
+No packages published
+Contributors
+4
+@clouedoc
+clouedoc Camille Louédoc-Eyriès
+@thehappydinoa
+thehappydinoa Aidan Holland
+@random-robbie
+random-robbie Robbie
+@iyanuashiri
+iyanuashiri Iyanuoluwa Ajao
+Languages
+Python
+99.6%
+ 
+Shell
+0.4%
